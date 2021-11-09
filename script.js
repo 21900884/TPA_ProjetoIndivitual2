@@ -9,8 +9,13 @@ function processing() {
     const jurus = document.getElementById('jurus').value;
     const parcelas = document.getElementById('parcelas').value;
     const resultado = document.getElementById('resultado');
+    
+    
+    window.alert("Testehufg27267");
 
     if (preco !== '' && salario !== '' && entrada !== '' && jurus !== '' && parcelas !== '') {
+        
+        window.alert("2");
         
         var i = jurus;
         var n = parcelas;
