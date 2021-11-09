@@ -28,9 +28,18 @@ function processing() {
         
         PV = (preco - entrada).toFixed(2);
         
+        window.alert("Teste2");
+        window.alert(PV);
+        
         PMT = PV * (((1 + i) ** n * i) / ((1 + i) ** n - 1)).toFixed(2);
         
+        window.alert("Teste3");
+        window.alert(PMT);
+        
         ValorMaximo = (30/100) * salario.toFixed(2);
+        
+        window.alert("Teste4");
+        window.alert(ValorMaximo);
         
         const X = 1+1;
         
