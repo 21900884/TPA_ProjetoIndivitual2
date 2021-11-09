@@ -12,15 +12,18 @@ function processing() {
 
     if (preco !== '' && salario !== '' && entrada !== '' && jurus !== '' && parcelas !== '') {
         
-        const i = jurus;
-        const n = parcelas;
-        const situacao = "";
+        var i = jurus;
+        var n = parcelas;
+        var situacao = "";
+        var PV = 0;
+        var PMT = 0;
+        var ValorMaximo = 0;
         
-        const PV = (preco - entrada).toFixed(2);
+        PV = (preco - entrada).toFixed(2);
         
-        const PMT = PV * (((1 + i) ** n * i) / ((1 + i) ** n - 1));
+        PMT = PV * (((1 + i) ** n * i) / ((1 + i) ** n - 1)).toFixed(2);
         
-        const ValorMaximo = (30/100) * salario;
+        ValorMaximo = (30/100) * salario.toFixed(2);
         
         if (PMT <= ValorMaximo) {
             situacao = "Aprovado";
