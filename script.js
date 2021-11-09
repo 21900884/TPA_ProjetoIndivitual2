@@ -11,6 +11,16 @@ function processing() {
     const resultado = document.getElementById('resultado');
     
     
+    window.alert(nome);
+    window.alert(preco);
+    window.alert(salario);
+    window.alert(entrada);
+    window.alert(jurus);
+    window.alert(parcelas);
+    
+    
+    
+    
     window.alert("Testehufg27267");
 
     if (preco !== '' && salario !== '' && entrada !== '' && jurus !== '' && parcelas !== '') {
