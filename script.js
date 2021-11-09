@@ -46,7 +46,7 @@ function processing() {
         window.alert("Teste3");
         window.alert(PMT);
         
-        ValorMaximo = (30/100) * salario.toFixed(2);
+        ValorMaximo = ((30/100) * salario).toFixed(2);
         
         window.alert("Teste4");
         window.alert(ValorMaximo);
