@@ -3,25 +3,34 @@ const calcular = document.getElementById('calcular');
 
 function processing() {
     const nome = document.getElementById('nome').value;
-    const tempoH = document.getElementById('tempoH').value;
-    const tempoMin = document.getElementById('tempoMin').value;
-    const tempoS = document.getElementById('tempoS').value;
-    const distancia = document.getElementById('distancia').value;
-    const peso = document.getElementById('peso').value;
+    const preco = document.getElementById('preco').value;
+    const salario = document.getElementById('salario').value;
+    const entrada = document.getElementById('entrada').value;
+    const jurus = document.getElementById('jurus').value;
+    const parcelas = document.getElementById('parcelas').value;
     const resultado = document.getElementById('resultado');
 
-    if (tempoH !== '' && tempoMin !== '' && tempoS !== '' && peso !== '' && distancia !== '') {
-
-        const tempoTotalS = ( (tempoH * 3600) + (tempoMin * 60) + (tempoS) );
-
-        const pace = ( (tempoTotalS / 60) / distancia ).toFixed(2);
+    if (preco !== '' && salario !== '' && entrada !== '' && jurus !== '' && parcelas !== '') {
         
-        const velocidade = (distancia / (tempoTotalS / 3600)).toFixed(2);
+        const i = jurus;
+        const n = parcelas;
+        const situacao = "";
         
-        const caloria = ( velocidade * (peso * 0.0175) * (tempoTotalS / 60) ).toFixed(2);
+        const PV = (preco - entrada).toFixed(2);
+        
+        const PMT = PV * (((1 + i) ** n * i) / ((1 + i) ** n - 1));
+        
+        const ValorMaximo = (30/100) * salario;
+        
+        if (PMT <= ValorMaximo) {
+            situacao = "Aprovado";
+            
+        }else{
+            situacao = "Recusado";
+        }
 
 
-        resultado.textContent = `Olá ${nome}! Você percorreu ${distancia} km em ${tempoH} h, ${tempoMin} min e ${tempoS} s. Isso quer dizer que a sua velocidade média foi de ${velocidade} km/h, o que o corresponde a um pace de ${pace} min/km. Com ${peso} kg, você gastou cerca de ${caloria} cal .`;
+        resultado.textContent = `Olá ${nome}! O valor ${PV} foi parcelado em ${parcelas} parcelas com ${jurus}% de jurus, resultando em R$ ${PMT} por parcela. Tendo em vista o seu salario de R$ ${salario} e o seu limite de R$ ${ValorMaximo} para cada parcela, o seu financiamento foi ${situacao}!`;
 
     }else {
         resultado.textContent = 'ERRO! Por favor preencha todos os campos!';
