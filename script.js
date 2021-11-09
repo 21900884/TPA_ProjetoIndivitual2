@@ -59,6 +59,9 @@ function processing() {
         }else{
             situacao = "Recusado";
         }
+        
+        window.alert("Teste5");
+        window.alert(situacao);
 
         
         window.alert(X);
