@@ -14,7 +14,7 @@ function processing() {
         
         var i = jurus;
         var n = parcelas;
-        var situacao = "";
+        //var situacao = "";
         var PV = 0;
         var PMT = 0;
         var ValorMaximo = 0;
