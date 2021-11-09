@@ -19,12 +19,15 @@ function processing() {
         var PV = 0;
         var PMT = 0;
         var ValorMaximo = 0;
+        var valorParcela = 0;
 
         PV = (preco - entrada).toFixed(2);
 
         PMT = PV * (((1 + i) ** n * i) / ((1 + i) ** n - 1)).toFixed(2);
 
         ValorMaximo = ((30/100) * salario).toFixed(2);
+        
+        valorParcela = (PMT / parcelas).toFixed(2);
 
         if (PMT <= ValorMaximo) {
             situacao = "Aprovado";
@@ -33,7 +36,7 @@ function processing() {
             situacao = "Recusado";
         }
 
-        resultado.textContent = `Olá ${nome}! O valor ${PV} foi parcelado em ${parcelas} parcelas com ${jurus}% de jurus, resultando em R$ ${PMT} por parcela. Tendo em vista o seu salario de R$ ${salario} e o seu limite de R$ ${ValorMaximo} para cada parcela, o seu financiamento foi ${situacao}!`;
+        resultado.textContent = `Olá ${nome}! O valor ${PV} foi parcelado em ${parcelas} parcelas com ${jurus}% de jurus, resultando em um valor total de R$ ${PMT} e R$ ${valorParcela} por parcela. Tendo em vista o seu salario de R$ ${salario} e o seu limite de R$ ${ValorMaximo} para cada parcela, o seu financiamento foi ${situacao}!`;
 
     }else {
         resultado.textContent = 'ERRO! Por favor preencha todos os campos!';
