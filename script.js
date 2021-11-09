@@ -29,7 +29,7 @@ function processing() {
         
         valorParcela = (PMT / parcelas).toFixed(2);
 
-        if (PMT <= ValorMaximo) {
+        if (valorParcela <= ValorMaximo) {
             situacao = "Aprovado";
             
         }else{
